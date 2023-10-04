@@ -42,6 +42,7 @@
   <ItemGroup>
      <Compile Include="Assets\cameraMov.cs" />
      <Compile Include="Assets\Move.cs" />
+     <Compile Include="Assets\MoveTO.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.9f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

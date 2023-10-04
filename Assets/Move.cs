@@ -3,9 +3,11 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public class Move : MonoBehaviour
-{
-    public float velocidad = 10.0f; // Velocidad de movimiento
+public class Move : MonoBehaviour{
+public float velocidad = 15.0f; // Velocidad de movimiento
+    public float fuerzaDeSalto = 10.0f; // Fuerza del salto
+
+    private bool enElSuelo = true; // Variable para rastrear si el personaje está en el suelo
 
     void Update()
     {
@@ -18,5 +20,31 @@ public class Move : MonoBehaviour
 
         // Aplicar el movimiento al objeto
         transform.Translate(movimiento);
+
+        // Manejar el salto
+        if (Input.GetKeyDown(KeyCode.Space) && enElSuelo)
+        {
+            // Aplicar una fuerza hacia arriba para simular el salto
+            GetComponent<Rigidbody>().AddForce(Vector3.up * fuerzaDeSalto, ForceMode.Impulse);
+            enElSuelo = false; // El personaje ya no está en el suelo después del salto
+        }
+    }
+
+    // Detectar si el personaje toca el suelo
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.CompareTag("Suelo"))
+        {
+            enElSuelo = true;
+        }
+    }
+
+    // Detectar si el personaje se aleja del suelo
+    void OnCollisionExit(Collision col)
+    {
+        if (col.gameObject.CompareTag("Suelo"))
+        {
+            enElSuelo = false;
+        }
     }
 }
