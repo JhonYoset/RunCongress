@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 using UnityEngine;
 
-public class SeguirJugador : MonoBehaviour
+public class CameraMov : MonoBehaviour
 {
     public Transform jugador; // El objeto jugador que la cámara seguirá
-    public Vector3 offset = new Vector3(0f, 5f, -10f); // Offset de la cámara desde el jugador
+    public Vector3 offset = new Vector3(-24f, 10f, -10f); // Offset de la cámara desde el jugador
 
     void LateUpdate()
     {
