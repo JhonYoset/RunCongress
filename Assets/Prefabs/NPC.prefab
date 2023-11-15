@@ -476,7 +476,7 @@ Transform:
   m_GameObject: {fileID: 4809822657168802416}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalPosition: {x: 1, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -521,7 +521,7 @@ MonoBehaviour:
   rotationSpeed: 45
   wanderInterval: 2
   wanderCenter: {x: 0, y: 0, z: 0}
-  wanderRadius: 3
+  wanderRadius: 1
 --- !u!114 &7581768733009204074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,7 +580,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 32
   m_CollisionDetection: 0
 --- !u!1 &5162400028291833173
 GameObject:

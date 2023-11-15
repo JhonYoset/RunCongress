@@ -5,8 +5,6 @@ public class GroundTile : MonoBehaviour {
     GroundSpawner groundSpawner;
     [SerializeField] GameObject coinPrefab;
     [SerializeField] GameObject obstaclePrefab;
-    [SerializeField] GameObject NPCPrefab;
-
     private void Start () {
         groundSpawner = GameObject.FindObjectOfType<GroundSpawner>();
 	}
@@ -36,17 +34,6 @@ public class GroundTile : MonoBehaviour {
             temp.transform.position = GetRandomPointInCollider(GetComponent<Collider>());
         }
     }
-/*
-    public void SpawnNPC ()
-    {
-        // Choose a random point to spawn the obstacle
-        int obstacleNPC = Random.Range(2, 5);
-        Transform spawnPoint = transform.GetChild(obstacleNPC).transform;
-
-        // Spawn the obstace at the position
-        Instantiate(NPCPrefab, spawnPoint.position, Quaternion.identity, transform);
-    }
-*/
     Vector3 GetRandomPointInCollider (Collider collider)
     {
         Vector3 point = new Vector3(
